@@ -1,0 +1,7 @@
+{
+  "name": "myGymApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
