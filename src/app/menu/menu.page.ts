@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router, RouterEvent } from '@angular/router';
 
 @Component({
@@ -6,31 +6,28 @@ import { Router, RouterEvent } from '@angular/router';
   templateUrl: './menu.page.html',
   styleUrls: ['./menu.page.scss'],
 })
-export class MenuPage implements OnInit {
+export class MenuComponent {
 
   activePath = '';
 
   pages = [
     {
       name: 'Home',
-      path: '/menu/home'
+      path: '/home'
     },
     {
       name: 'Gallery',
-      path: '/menu/gallery'
+      path: '/gallery'
     },
     {
       name: 'Contact',
-      path: '/menu/contact'
+      path: '/contact'
     }
-  ]
+  ];
 
   constructor(private router: Router) {
     this.router.events.subscribe((event: RouterEvent) => {
-      this.activePath = event.url
-    })
-  }
-
-  ngOnInit() {
+      this.activePath = event.url;
+    });
   }
 }
