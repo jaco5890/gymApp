@@ -10,15 +10,9 @@
 <ion-content fullscreen >
   <div class="slider-screen">
     <ion-slides class="slide" pager="true">
-      <ion-slide style="background: url(/assets/gym4.jpg)center/cover ">
-        <ion-button  color="white" size="large" class="open">View Workout Plan</ion-button>
-      </ion-slide>
-      <ion-slide style="background: url(/assets/gym.jpg)center/cover ">
-        <ion-button  (click)="checkAmmenities()" color="white" size="large" class="open">Check Ammenities</ion-button>
-      </ion-slide>
-      <ion-slide style="background: url(/assets/gym5.png)center/cover ">
-        <ion-button  color="white" size="large" class="open">Checkout Offers</ion-button>
-      </ion-slide>
+        <ion-slide *ngFor="let slide of slides" [ngStyle]="{'background':'url(' + slide.src + ')center/cover'}">
+          <ion-button (click)="goTo(slide.link)"  color="white" size="large" class="open">{{slide.text}}</ion-button>
+        </ion-slide>
     </ion-slides>
   </div>
 </ion-content>

@@ -1,6 +1,6 @@
-import { Component,ViewChild } from '@angular/core';
-import { IonSlides } from '@ionic/angular';
-import { Router } from '@angular/router';
+import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-home',
@@ -8,13 +8,30 @@ import { Router } from '@angular/router';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  ImageArray: any = [];
+  slides: any[] = [];
 
-  constructor(private router: Router) {
-    this.ImageArray = [{'image' : '/assets/gym.jpg'},{'image' : '/assets/gym.jpg'},{'image' : '/assets/gym.jpg'}]
+  constructor(private nav: NavController) {
+    this.slides = [
+      {
+        src: '/assets/gym4.jpg',
+        text: 'View Workout Plan',
+        link: 'workout'
+      },
+      {
+        src: '/assets/gym.jpg',
+        text: 'Check Ammenities',
+        link: 'ammenities'
+      },
+      {
+        src: '/assets/gym5.png',
+        text: 'Checkout Offers',
+        link: 'offers'
+      }
+    ];
   }
-  checkAmmenities(){
-    console.log('triggered')
-    this.router.navigate(['/ammenities']);
+
+
+  goTo(link) {
+    this.nav.navigateForward(link);
   }
 }
