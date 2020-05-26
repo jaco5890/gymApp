@@ -1,0 +1,16 @@
+.active-menu {
+    border-left: 5px solid var(--ion-color-danger);
+}
+ion-menu {
+    --ion-background-color: transparent;
+    --ion-text-color: var(--ion-color-primary-contrast);
+    --min-width: 100%;
+
+    ion-item {
+        --background: #transparent;
+ 
+    }
+    ion-list {/* optional, but it needs when you use gradient as a background color.*/
+      background: transparent;
+    }
+  }
